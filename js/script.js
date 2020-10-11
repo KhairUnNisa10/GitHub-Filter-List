@@ -1,7 +1,7 @@
-const results = document.querySelector('#results');
-const filerList = document.querySelector('#filerList');
+const result = document.querySelector('#result');
+const filterValue = document.querySelector('#filterValue');
 
-const buildCards = data => {
+const filterCards = data => {
 	data.forEach(item => {
 		const div = document.createElement('div');
 		div.classList = "user card mb-2"
@@ -14,15 +14,15 @@ const buildCards = data => {
 		</div>
 		`;
 		div.innerHTML = output;
-		results.appendChild(div);
+		result.appendChild(div);
 	});
 };
 
-const orderList = e => {
-	let filerValue = e.target.value.toUpperCase();
+const filterList = e => {
+	let filterTargetValue = e.target.value.toUpperCase();
 	let users = document.querySelectorAll(".user");
 	users.forEach(user => {
-		user.textContent.toUpperCase().includes(filerValue)
+		user.textContent.toUpperCase().includes(filterTargetValue)
 		? (user.style.display = "")
 		: (user.style.display = "none");
 	});
@@ -32,8 +32,8 @@ fetch('https://api.github.com/users')
 	.then(res => res.json())
 	.then(data => {
 		console.log(data);
-		buildCards(data);
+		filterCards(data);
 	});
 
 
-filterList.addEventListener("input", orderList);
+filterValue.addEventListener("input", filterList);
