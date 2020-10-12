@@ -4,22 +4,26 @@
 	<meta charset="utf-8">
 	<title>GitHub Filter</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<link href="https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;500&display=swap" rel="stylesheet">
 </head>
-<body class="bg-light">
-	<div class="container text-center bg-light mt-2 p-5">
-		<h1>GitHub Users Filter List</h1>
-		<hr>
-		<div class="input-group mb-3">
-			<div class="input-group-prepend">
-				<span class="input-group-text">Enter name to filter by:</span>
+<body>
+	<div class="main">
+		<div class="container text-center p-5">
+			<h1 class="head">GitHub Users Filter List</h1>
+			<hr>
+			<div class="input-group mb-3">
+				<div class="input-group-prepend">
+					<span class="input input-group-text">Enter name to filter by:</span>
+				</div>
+				<input type="text" id="filterValue" placeholder="Search...." class="form-control">
 			</div>
-			<input type="text" id="filterValue" placeholder="UserName" class="form-control">
+			<div id="result" style="width: 50%; margin: auto"></div>
 		</div>
-		<div id="result" style="width: 50%; margin: auto"></div>
 	</div>
 	<!-- End of HTML -->
 
